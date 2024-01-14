@@ -1,83 +1,49 @@
-WebsiteGPT
-Frontend Initialization:
-Client Environment Variables:
-Create a file called .env in the root of the 'client' folder.
+Frontend initiation:
+- Create a file called .env in the root of the ‘client’ folder and type the next in it without any extra spaces or other symbols
+    - REACT_APP_BACKEND_URL=http://localhost:3001
+- Change directory location to: WebsiteGPT\client
+    - Type in terminal -> npm start
 
-Add the following line to the .env file (without extra spaces or other symbols):
+Backend initiation:
+- Create a file called .env in the root of the ‘client’ folder and type the next in it without any extra spaces or other symbols
+    - OPENAI_API_KEY=-<your_openai_api_key>
+    - PORT=3001
+- Change directory location to: WebsiteGPT\server
+    -  Type in terminal -> node app.js
 
-arduino
-Copy code
-REACT_APP_BACKEND_URL=http://localhost:3001
-Starting the Client:
-Change the directory location to WebsiteGPT\client.
-
-In the terminal, run the following command:
-
-sql
-Copy code
-npm start
-Backend Initialization:
-Server Environment Variables:
-Create a file called .env in the root of the 'server' folder.
-
-Add the following lines to the .env file (without extra spaces or other symbols):
-
-makefile
-Copy code
-OPENAI_API_KEY=<your_openai_api_key>
-PORT=3001
-Starting the Server:
-Change the directory location to WebsiteGPT\server.
-
-In the terminal, run the following command:
-
-Copy code
-node app.js
 Setting up the OpenAI Assistant:
-Create your own assistant at OpenAI Assistants.
+- Make your own assistant at https://platform.openai.com/assistants
+    - This version is powered by gpt-3.5-turbo-1106 model.
+        - Gpt4 model is very expensive to use since it uses a lot of tokens for every query.
+    - o	Remember to enable these tools to the assistant in the OpenAI assistant configuration page.
+       - Retrieval
+       - Code interpreter
+- Get your OpenAI API-key from
+  - https://platform.openai.com/api-keys
+      - The API key is displayed only once remember to keep it safe.
 
-This version is powered by the gpt-3.5-turbo-1106 model.
-
-Note: The gpt-4 model is expensive to use due to its token consumption.
-
-In the OpenAI assistant configuration page, remember to enable the following tools for the assistant:
-
-Retrieval
-Code interpreter
-Get your OpenAI API key from OpenAI API Keys.
-
-Keep your API key safe as it is displayed only once.
 Setting up the Python assistant_service:
-Create a file called .env in the root of the project folder.
+  - Create a file called .env in the root of the project folder and type the next in it without any extra spaces or other symbols
+      -	OPENAI_API_KEY=<your_openai_api_key>
+      - ASSISTANT_ID=<your_assistant_id>
+  - Run the assistant_service.py file
 
-Add the following lines to the .env file (without extra spaces or other symbols):
+My dataset is from https://www.kaggle.com/datasets/thedevastator/global-video-game-sales-and-reviews ¬¬– Credits to Andy Bramwell
+  -	The data is converted to JSON format and attached to the assistant
+    -	The json data is included in the root of the python project called csvjson.json in case you want to use it with your assistant as well
 
-makefile
-Copy code
-OPENAI_API_KEY=<your_openai_api_key>
-ASSISTANT_ID=<your_assistant_id>
-Run the assistant_service.py file.
+This prototype can answer only to simple questions based on the dataset like:
+  -	What is the rank 1 game globally?
+  -	What is the most popular Pokémon game?
 
-Dataset Information:
-The dataset is sourced from Global Video Game Sales and Reviews by Andy Bramwell.
+If there are more complicated analytical questions where the assistant must do multiple queries to the dataset the assistant will answer several times before the final answer is ready.
+This prototype does not support or render these kinds of questions in the frontend, but you can test the assistant at the OpenAI playground: https://platform.openai.com/playground
 
-The data has been converted to JSON format and attached to the assistant.
+Relevant documentation
+  -	OpenAI Python API library
+    -	https://github.com/openai/openai-python
+  - v1.0.0 Migration Guide #742
+    - https://github.com/openai/openai-python/discussions/742
+  -	OpenAI Assistants
+    - https://platform.openai.com/docs/api-reference/assistants
 
-The JSON data is included in the root of the Python project as csvjson.json in case you want to use it with your assistant.
-Prototype Features:
-This prototype can answer simple questions based on the dataset, such as:
-
-"What is the rank 1 game globally?"
-"What is the most popular Pokémon game?"
-For more complex analytical questions that require multiple queries to the dataset, the assistant may provide several responses before delivering the final answer.
-
-Please note that the frontend does not support or render complex questions, but you can test the assistant at the OpenAI Playground.
-
-Relevant Documentation:
-OpenAI Python API Library
-
-v1.0.0 Migration Guide #742
-
-OpenAI Assistants
-
-This reformatted README should make it easier for readers to understand the steps and information provided in your project documentation. Feel free to further customize it as needed.
