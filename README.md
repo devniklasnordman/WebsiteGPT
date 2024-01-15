@@ -1,3 +1,14 @@
+This project contains two chat gpt models integrated into a single web appliaction. First on is a basic gpt 3.5 turbo model that can answer to general questions like the free version of chatgpt. Second one is called the Game Wizard which is trained on a dataset of around 1500 units in json format. The dataset includes video game sales data between years 1989 and 2012. More info about the dataset is found further down this readme file.
+
+Basic gpt 3.5 turbo API search:
+
+![basic gpt 3.5](gpt3_interface.PNG)
+
+
+Game Wizard - Trained custom gpt model using OpenAI assistant API: 
+![Game Wizard](wizard_picture.PNG)
+
+
 Frontend initiation:
   -	Create a file called .env in the root of the ‘client’ folder and type the next in it without any extra spaces or other symbols
     -	REACT_APP_BACKEND_URL=http://localhost:3001
