@@ -38,6 +38,8 @@ Setting up the Python assistant_service:
     -	OPENAI_API_KEY=<your_openai_api_key>
   -	ASSISTANT_ID=<your_assistant_id>
     -	Run the assistant_service.py file
+   
+-----> In order to run the Game Wizard successfully you have to have the React frontend, Node backend and Python server_assistant running.
 
 My dataset is from https://www.kaggle.com/datasets/thedevastator/global-video-game-sales-and-reviews ¬¬– Credits to Andy Bramwell
   -	The data is converted to JSON format and attached to the assistant
